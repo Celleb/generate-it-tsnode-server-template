@@ -15,9 +15,9 @@ export default function (app: express.Application, basePath = '') {
 
   if (config.loadSwaggerUIRoute) {
     {% if(endsWith(swagger.basePath, '/')) %}
-    app.use(basePath + '{{ swagger.basePath }}swagger', require('./routes/swaggerRoutes').default())
+    app.use(basePath + '{{ swagger.basePath }}docs', require('./routes/swaggerRoutes').default())
     {% else %}
-    app.use(basePath + '{{ swagger.basePath }}/swagger', require('./routes/swaggerRoutes').default())
+    app.use(basePath + '{{ swagger.basePath }}/docs', require('./routes/swaggerRoutes').default())
     {% endif %}
   }
 }

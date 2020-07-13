@@ -14,13 +14,12 @@
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
     "paths": {
-      "@constants": ["src/constants"],
-      "@enums": ["src/enums"],
       "@database/*": ["database/*"],
       "@models/*": ["src/models/*"],
       "@domains": ["src/domains"],
       "@http/*": ["src/http/*"],
       "@services/*": ["src/services/*"],
+      "@shared/*": ["src/shared/*"],
       "@utils/*": ["src/utils/*"],
       "@/*": ["src/*"]
     },
@@ -31,6 +30,6 @@
       }
     ]
   },
-  "include": ["src/**/*", "database"],
+  "include": ["src/**/*", "declaration.d.ts"],
   "exclude": ["package.json"]
 }
