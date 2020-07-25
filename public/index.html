@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>ReDoc</title>
+        <title>Star Grid API Documentation</title>
         <!-- needed for adaptive design -->
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link
-            href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:300,400,700"
             rel="stylesheet"
+            type="text/css"
+            href="https://unpkg.com/swagger-ui-dist@3/swagger-ui.css"
         />
-
+        <script src="https://unpkg.com/swagger-ui-dist@3/swagger-ui-bundle.js"></script>
+        <script src="https://unpkg.com/swagger-ui-dist@3/swagger-ui-standalone-preset.js"></script>
         <!--
     ReDoc doesn't change outer page styles
     -->
@@ -20,8 +22,16 @@
             }
         </style>
     </head>
+
     <body>
-        <redoc spec-url="./latest.json"></redoc>
-        <script src="https://cdn.jsdelivr.net/npm/redoc@next/bundles/redoc.standalone.js"></script>
+        <div id="app"></div>
+        <script type="text/javascript">
+            SwaggerUIBundle({
+                url: 'latest.json',
+                dom_id: '#app',
+                presets: [SwaggerUIBundle.presets.apis, SwaggerUIStandalonePreset],
+                layout: 'StandaloneLayout',
+            });
+        </script>
     </body>
 </html>

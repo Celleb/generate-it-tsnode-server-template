@@ -1,19 +1,14 @@
 #!/bin/sh
 
-echo "Command: $@"
-
-command="${1:-prod}"
-
-case $command in
-  watch)
-    npm install
-    npm run dev:build-watch
+case $NODE_ENV in
+  development)
+    npm run pm2:start
   ;;
-  dev)
-    echo "Running dev server..."
-    npm run dev:start-watch
+  staging)
+    echo "Running staging server..."
+    npm run pm2:start
   ;;
-  prod)
+  production)
     echo "Running server..."
     npm run start
   ;;
